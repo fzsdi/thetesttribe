@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Demo Shop</title></head>
+<body>
+  <h1>Demo Shop</h1>
+  <p>Cart: <span id="cart-count">0</span></p>
+  <div id="product-list">Loading...</div>
+  <section id="order-summary">
+    <h2>Order summary</h2>
+    <button id="place-order-btn">Place order</button>
+    <p id="message"></p>
+  </section>
+  <script>
+    const products = ['Notebook', 'Pen', 'Backpack'];
+    let cart = 0;
+    setTimeout(() => {
+      const list = document.getElementById('product-list');
+      list.innerHTML = '';
+      products.forEach(name => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerHTML = name + ' <button>Add to cart</button>';
+        div.querySelector('button').onclick = () => {
+          cart++;
+          document.getElementById('cart-count').textContent = cart;
+        };
+        list.appendChild(div);
+      });
+    }, 200 + Math.random() * 1300);
+    document.getElementById('place-order-btn').onclick = () => {
+      document.getElementById('message').textContent = cart > 0 ? 'Order placed' : 'Cart is empty';
+    };
+  </script>
+</body>
+</html>
