@@ -1,6 +1,0 @@
-- generic [active] [ref=e1]:
-  - heading "Demo Shop" [level=1] [ref=e2]
-  - paragraph [ref=e3]: "Cart: 0"
-  - generic [ref=e4]: Loading...
-  - button "Checkout" [ref=e5]
-  - paragraph
